@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GlobalvarService } from '../globalvar.service';
 
 @Component({
   selector: 'app-halaman2',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Halaman2Component implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router, public globalvar:GlobalvarService,private route:ActivatedRoute){
+      // this.listnotes = this.globalvar.getnotes();
+    }
 
   ngOnInit() {
   }
