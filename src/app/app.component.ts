@@ -1,6 +1,6 @@
 import { Component, VERSION } from '@angular/core';
-import { Router } from '@angular/router';
-import { GlobalvarService } from '../globalvar.service';
+import { ActivatedRoute, Router } from '@angular/router';
+// import { GlobalvarService } from '../globalvar.service';
 
 @Component({
   selector: 'my-app',
@@ -9,7 +9,9 @@ import { GlobalvarService } from '../globalvar.service';
 })
 export class AppComponent  {
    constructor(
-    private router:Router, public globalvar:GlobalvarService){
+    private router:Router, private route:ActivatedRoute){
+      // public globalvar:GlobalvarService,
+      
       // 
       // this.namaglobal=this.globalvar.getnama();
       }
@@ -26,10 +28,12 @@ export class AppComponent  {
   }
 
   DETAIL(){
+    // this.router.navigate(["/halaman2"]);
 
   }
 
   FAVOURITE(){
+    // this.router.navigate(["/halaman3"]);
 
   }
 }

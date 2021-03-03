@@ -15,11 +15,13 @@ export class Halaman1Component implements OnInit {
   judulshow;
   isishow;
   tanggalshow;
-  notes : any[][];
+  listnotes: Array<{judul:string,isi:string,tanggal:Date}> = [];
+  lennote=0;
+  //listnotes;
 
     constructor(
     private router:Router, public globalvar:GlobalvarService,private route:ActivatedRoute){
-      // this.namaglobal=this.globalvar.getnama();
+      // this.listnotes = this.globalvar.getnotes();
     }
     paramjudul:String;
 
@@ -28,12 +30,24 @@ export class Halaman1Component implements OnInit {
     // this.paramjudul=isijudul;
   }
    addnote(){
-     this.globalvar.setjudul(this.judulnote);
-     this.judulshow=this.globalvar.getjudul();
-     this.globalvar.setisi(this.isinote);
-     this.isishow=this.globalvar.getisi();
-     this.globalvar.settanggal(this.tanggalnote);
-     this.tanggalshow=this.globalvar.gettanggal();
+    //  this.globalvar.setjudul(this.judulnote);
+    //  this.judulshow=this.globalvar.getjudul();
+    //  this.globalvar.setisi(this.isinote);
+    //  this.isishow=this.globalvar.getisi();
+    //  this.globalvar.settanggal(this.tanggalnote);
+    //  this.tanggalshow=this.globalvar.gettanggal();
+     this.listnotes.push({ judul: this.judulnote, isi: this.isinote, tanggal:this.tanggalnote});
+    //  console.log(this.listnotes[0]);
+     this.lennote=this.listnotes.length;
+     
+     for (var i = 0; i < this.lennote; i++) {
+      console.log(
+        this.listnotes[i]
+      );
+      }
+
+    //  this.router.navigate(["/halaman2"]);
+
 
     // this.notes=[{judul:this.judulnote,isi:this.isinote,tanggal:this.tanggalnote}]
   
