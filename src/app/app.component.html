@@ -1,4 +1,23 @@
-<hello name="{{ name }}"></hello>
+<!-- <hello name="{{ name }}"></hello>
 <p>
   Start editing to see some magic happen :)
+</p> -->
+
+<!-- {{judulglobal}} -->
+<h2 style="text-align:center;"> Let's share memories </h2>
+<p style="text-align:center;"> Which one you choose? <br><br>
+<button style="margin:20px;"(click)="INPUT()">Input Note</button>
+<button style="margin:20px;" (click)="DETAIL()">Detail Note</button>
+<button style="margin:20px;" (click)="FAVOURITE()">Favourite Note</button>
+<router-outlet> </router-outlet>
 </p>
+
+
+
+
+<!-- Ketentuan Program yang dibuat antara lain :
+1. Program terdiri dari 3 halaman
+2. Halaman 1 : Halaman untuk input note (yang diinputkan judul, isi, dan tanggal note dibuat)
+    Halaman 2 : Berisi halaman detail note. (Halaman detail terdapat icon untuk membuat note tersebut menjadi favorit)
+    Halaman 3 : Berisi note yang favorit.
+3. Routing Halaman dapat disesuaikan sendiri. Contoh : Halaman 2 hanya dapa diakses dari memilih note di halaman 1, Hal 3 dapat diakses dari mana saja. -->
