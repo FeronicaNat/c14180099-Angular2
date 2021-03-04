@@ -10,9 +10,6 @@ import { GlobalvarService } from '../globalvar.service';
 export class AppComponent  {
    constructor(
     private router:Router, private route:ActivatedRoute,public globalvar:GlobalvarService){
-      // 
-      
-      // 
       // this.namaglobal=this.globalvar.getnama();
       }
   name = 'Angular ' + VERSION.major;
@@ -33,7 +30,7 @@ export class AppComponent  {
   }
 
   FAVOURITE(){
-    // this.router.navigate(["/halaman3"]);
+    this.router.navigate(["/halaman3"]);
 
   }
 }

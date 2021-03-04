@@ -1,12 +1,12 @@
 <!-- <p> -->
 <h3> Judul </h3>
-<input type="text" [(ngModel)]="judulnote" placeholder="Judul noteku">
+<input type="text" [(ngModel)]="judulnote" placeholder="Judul noteku" style="background:#ffe6f7">
 <h3> Isi </h3>
-<textarea [(ngModel)]="isinote" placeholder="Apa yang ingin disammpaikan"></textarea>
+<textarea [(ngModel)]="isinote" placeholder="Apa yang ingin ditulis" style="background:#ffe6f7"></textarea>
 <h3> Tanggal </h3>
-<input type="date" [(ngModel)]="tanggalnote">
+<input type="date" [(ngModel)]="tanggalnote" style="background:#ffe6f7">
 <br><br>
-<button style="text-align:center" (click)="addnote()">Add</button>
+<button style="text-align:center" (click)="addnote()" style="border-radius:30px;background:pink;">Add</button>
 <!-- {{listnotes}} -->
 
 

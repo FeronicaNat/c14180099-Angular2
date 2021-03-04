@@ -44,6 +44,7 @@ export class Halaman1Component implements OnInit {
     //  this.isishow=this.globalvar.getisi();
     //  this.globalvar.settanggal(this.tanggalnote);
     //  this.tanggalshow=this.globalvar.gettanggal();
+     alert("Add notes sukses");
      this.indexnote=this.indexnote+1;
      this.globalvar.setindex(this.indexnote);
 
