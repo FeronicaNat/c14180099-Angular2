@@ -15,6 +15,7 @@ export class Halaman1Component implements OnInit {
   judulshow;
   isishow;
   tanggalshow;
+  indexnote=0;
   listnotes: Array<{judul:string,isi:string,tanggal:Date,favourite:number,index:number}> = [];
   lennote=0;
   //listnotes;
@@ -46,11 +47,12 @@ export class Halaman1Component implements OnInit {
        isi: this.isinote,
        tanggal:this.tanggalnote,
        favourite:0,
-       index:0
+       index:this.indexnote
        });
     //  console.log(this.listnotes[0]);
      this.lennote=this.listnotes.length;
      this.globalvar.setnotes(this.listnotes);
+     this.indexnote+=this.indexnote;
      
      for (var i = 0; i < this.lennote; i++) {
       console.log(

@@ -20,8 +20,11 @@ export class Halaman2Component implements OnInit {
     console.log(this.shownotes.length);
   }
   favourite(idnote){
+     alert(this.globalvar.getnotes['index']);
     for(var i=0;i<this.globalvar.getnotes.length;i++){
+     
       if(this.globalvar.getnotes['index']==idnote){
+         alert(this.globalvar.getnotes['index']);
         if(this.globalvar.getnotes['favourite']==0){
           this.globalvar.getnotes['favourite']=1;
         }
