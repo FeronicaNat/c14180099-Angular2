@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GlobalvarService } from '../globalvar.service';
+// import { MatIconRegistry } from '@angular/material';
+// import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-halaman2',
