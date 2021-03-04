@@ -15,10 +15,11 @@ export class Halaman1Component implements OnInit {
   judulshow;
   isishow;
   tanggalshow;
-  indexnote=0;
+  indexnote=-1;
   listnotes: Array<{judul:string,isi:string,tanggal:Date,favourite:number,index:number}> = [];
   lennote=0;
   //listnotes;
+
 
     constructor(
     private router:Router, public globalvar:GlobalvarService,private route:ActivatedRoute){
@@ -30,6 +31,7 @@ export class Halaman1Component implements OnInit {
     // let isijudul=this.route.snapshot.paramMap.get('judulnote');
     // this.paramjudul=isijudul;
       this.listnotes=this.globalvar.getnotes();
+      this.indexnote=this.globalvar.getindex();
   }
    addnote(){
      if(this.judulnote==null||this.isinote==null||this.tanggalnote=="null"){
@@ -42,23 +44,32 @@ export class Halaman1Component implements OnInit {
     //  this.isishow=this.globalvar.getisi();
     //  this.globalvar.settanggal(this.tanggalnote);
     //  this.tanggalshow=this.globalvar.gettanggal();
+     this.indexnote=this.indexnote+1;
+     this.globalvar.setindex(this.indexnote);
+
      this.listnotes.push({ 
        judul: this.judulnote, 
        isi: this.isinote,
        tanggal:this.tanggalnote,
        favourite:0,
-       index:this.indexnote
+       index:this.globalvar.getindex()
        });
     //  console.log(this.listnotes[0]);
      this.lennote=this.listnotes.length;
+
      this.globalvar.setnotes(this.listnotes);
-     this.indexnote+=this.indexnote;
+
+    //  this.indexnote+=this.indexnote;
+
+    //  this.indexnote=this.listnotes[this.lennote].index;
+     alert("DI HAL1 "+this.indexnote);
      
      for (var i = 0; i < this.lennote; i++) {
       console.log(
         this.listnotes[i],
         this.listnotes[i].judul
       );
+      
       }
      }
 

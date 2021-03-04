@@ -9,6 +9,7 @@ import { GlobalvarService } from '../globalvar.service';
 })
 export class Halaman2Component implements OnInit {
   shownotes: Array<{judul:string,isi:string,tanggal:Date,favourite:number,index:number}> = [];
+  listnotes: Array<{judul:string,isi:string,tanggal:Date,favourite:number,index:number}> = [];
 
   constructor(
     private router:Router, public globalvar:GlobalvarService,private route:ActivatedRoute){
@@ -17,23 +18,24 @@ export class Halaman2Component implements OnInit {
 
   ngOnInit() {
     this.shownotes = this.globalvar.getnotes();
+    this.listnotes = this.globalvar.getnotes();
     console.log(this.shownotes.length);
   }
   favourite(idnote){
-     alert(this.globalvar.getnotes['index']);
-    for(var i=0;i<this.globalvar.getnotes.length;i++){
+    for(var i=0;i<this.listnotes.length;i++){
      
-      if(this.globalvar.getnotes['index']==idnote){
-         alert(this.globalvar.getnotes['index']);
-        if(this.globalvar.getnotes['favourite']==0){
-          this.globalvar.getnotes['favourite']=1;
+      if(this.listnotes[i].index==idnote){
+         alert(this.listnotes[i].index);
+        if(this.listnotes[i].favourite==0){
+          this.listnotes[i].favourite=1;
         }
         else{
-          this.globalvar.getnotes['favourite']=0;
+          this.listnotes[i].favourite=0;
         }
       }
     }
-    this.shownotes = this.globalvar.getnotes();
+    this.shownotes = this.listnotes;
+    this.globalvar.setnotes(this.shownotes)
 
   }
 

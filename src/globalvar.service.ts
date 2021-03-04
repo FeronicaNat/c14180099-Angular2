@@ -47,6 +47,7 @@ import { Injectable } from '@angular/core';
 
 export class GlobalvarService {
   private listnotes: Array<{judul:string,isi:string,tanggal:Date,favourite:number,index:number}> = [];
+  private index:number=-1;
   constructor() { }
 
   public getnotes(){
@@ -56,4 +57,14 @@ export class GlobalvarService {
   public setnotes(listn :Array<{judul:string,isi:string,tanggal:Date,favourite:number,index:number}>){
     this.listnotes = listn;
   }
+
+  public getindex(){
+    return this.index;
+  }
+  public setindex(indexn:number){
+    this.index=indexn;
+  }
+
+
+
 }
