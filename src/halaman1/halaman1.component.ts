@@ -44,7 +44,6 @@ export class Halaman1Component implements OnInit {
     //  console.log(this.listnotes[0]);
      this.lennote=this.listnotes.length;
      this.globalvar.setnotes(this.listnotes);
-     this.globalvar.getnotes();
      
      for (var i = 0; i < this.lennote; i++) {
       console.log(
