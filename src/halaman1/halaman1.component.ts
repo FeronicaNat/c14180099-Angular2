@@ -15,7 +15,7 @@ export class Halaman1Component implements OnInit {
   judulshow;
   isishow;
   tanggalshow;
-  listnotes: Array<{judul:string,isi:string,tanggal:Date}> = [];
+  listnotes: Array<{judul:string,isi:string,tanggal:Date,favourite:number,index:number}> = [];
   lennote=0;
   //listnotes;
 
@@ -28,6 +28,7 @@ export class Halaman1Component implements OnInit {
     ngOnInit() {
     // let isijudul=this.route.snapshot.paramMap.get('judulnote');
     // this.paramjudul=isijudul;
+      this.listnotes=this.globalvar.getnotes();
   }
    addnote(){
      if(this.judulnote==null||this.isinote==null||this.tanggalnote=="null"){
@@ -40,7 +41,13 @@ export class Halaman1Component implements OnInit {
     //  this.isishow=this.globalvar.getisi();
     //  this.globalvar.settanggal(this.tanggalnote);
     //  this.tanggalshow=this.globalvar.gettanggal();
-     this.listnotes.push({ judul: this.judulnote, isi: this.isinote, tanggal:this.tanggalnote});
+     this.listnotes.push({ 
+       judul: this.judulnote, 
+       isi: this.isinote,
+       tanggal:this.tanggalnote,
+       favourite:0,
+       index:0
+       });
     //  console.log(this.listnotes[0]);
      this.lennote=this.listnotes.length;
      this.globalvar.setnotes(this.listnotes);

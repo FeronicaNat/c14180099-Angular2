@@ -1,8 +1,17 @@
 <router-outlet> </router-outlet>
 
-<div *ngFor="let a of shownotes;">
+
+<div *ngFor="let a of shownotes;let i=index;">
+  <img *ngIf="a['favourite']==0" (click)="favourite(i)" src="https://pngimg.com/uploads/love/love_PNG85.png" style="width:70px;height:70px" alt="image">
+
+  <img *ngIf="a['favourite']==1" (click)="favourite(i)" src="https://cdn.pixabay.com/photo/2013/07/12/18/03/black-152877_640.png" style="width:70px;height:70px" alt="image">
+  
   <label>Judul :{{a['judul']}}</label><br>
   <label>Isi :{{a['isi']}}</label><br>
-  <label>Tanggal :{{a['tanggal']}}</label><br>
+  <label>Tanggal :{{a['tanggal']}}</label><br><br>
+  <label>indexxx {{i}} </label>
+  <!-- <label>NYOBAKK :{{a.index}}</label> -->
+  <!-- search = (arr, item) => { return arr.indexOf(item); } -->
+
 </div>
 

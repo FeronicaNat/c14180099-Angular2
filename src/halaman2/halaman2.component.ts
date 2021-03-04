@@ -8,7 +8,7 @@ import { GlobalvarService } from '../globalvar.service';
   styleUrls: ['./halaman2.component.css']
 })
 export class Halaman2Component implements OnInit {
-  shownotes: Array<{judul:string,isi:string,tanggal:Date}> = [];
+  shownotes: Array<{judul:string,isi:string,tanggal:Date,favourite:number,index:number}> = [];
 
   constructor(
     private router:Router, public globalvar:GlobalvarService,private route:ActivatedRoute){
@@ -18,6 +18,20 @@ export class Halaman2Component implements OnInit {
   ngOnInit() {
     this.shownotes = this.globalvar.getnotes();
     console.log(this.shownotes.length);
+  }
+  favourite(idnote){
+    for(var i=0;i<this.globalvar.getnotes.length;i++){
+      if(this.globalvar.getnotes['index']==idnote){
+        if(this.globalvar.getnotes['favourite']==0){
+          this.globalvar.getnotes['favourite']=1;
+        }
+        else{
+          this.globalvar.getnotes['favourite']=0;
+        }
+      }
+    }
+    this.shownotes = this.globalvar.getnotes();
+
   }
 
 }

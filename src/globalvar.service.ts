@@ -46,14 +46,14 @@ import { Injectable } from '@angular/core';
 // }
 
 export class GlobalvarService {
-  private listnotes: Array<{judul:string,isi:string,tanggal:Date}> = [];
+  private listnotes: Array<{judul:string,isi:string,tanggal:Date,favourite:number,index:number}> = [];
   constructor() { }
 
   public getnotes(){
     return this.listnotes;
   }
 
-  public setnotes(listn :Array<{judul:string,isi:string,tanggal:Date}>){
+  public setnotes(listn :Array<{judul:string,isi:string,tanggal:Date,favourite:number,index:number}>){
     this.listnotes = listn;
   }
 }
