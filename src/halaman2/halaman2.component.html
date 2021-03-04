@@ -2,14 +2,24 @@
 
 
 <div *ngFor="let a of shownotes;let i=index;">
-  <img *ngIf="a['favourite']==0" (click)="favourite(i)" src="https://pngimg.com/uploads/love/love_PNG85.png" style="width:70px;height:70px" alt="image">
 
-  <img *ngIf="a['favourite']==1" (click)="favourite(i)" src="https://cdn.pixabay.com/photo/2013/07/12/18/03/black-152877_640.png" style="width:70px;height:70px" alt="image">
+  <div style="margin:auto;background:pink;">
   
-  <label>Judul :{{a['judul']}}</label><br>
-  <label>Isi :{{a['isi']}}</label><br>
-  <label>Tanggal :{{a['tanggal']}}</label><br><br>
-  <label>indexxx {{i}} </label>
+    <img *ngIf="a['favourite']==0" (click)="favourite(i)" src="https://pngimg.com/uploads/love/love_PNG85.png" style="width:60px;height:60px;" alt="image" >
+
+   <img *ngIf="a['favourite']==1" (click)="favourite(i)" src="https://cdn.pixabay.com/photo/2013/07/12/18/03/black-152877_640.png" style="width:60px;height:60px;" alt="image">
+  
+  <div style="text-align:center;width:100%;height:100%;">
+  <label><h3>Judul :</h3>{{a['judul']}}</label><br>
+  <h3>Isi :</h3>
+  <div style="overflow:auto;width:100%;height:100%;">
+  {{a['isi']}}<br>
+  </div>
+  <label><h3>Tanggal :</h3>{{a['tanggal']}}</label><br><br>
+  <hr style="border: 1px solid black;border-radius: 4px">
+  </div>
+  </div>
+
   <!-- <label>NYOBAKK :{{a.index}}</label> -->
   <!-- search = (arr, item) => { return arr.indexOf(item); } -->
 
