@@ -7,10 +7,12 @@ import { HelloComponent } from './hello.component';
 import { RouterModule, Routes } from '@angular/router';
 import { Halaman1Component } from '../halaman1/halaman1.component';
 import { GlobalvarService } from '../globalvar.service';
+import { Halaman2Component } from '../halaman2/halaman2.component';
 
 const ROUTES: Routes = [
-  {path: 'halaman1', component: Halaman1Component}
-  // {path: 'login/:nama', component: LoginComponent}
+  {path: 'halaman1', component: Halaman1Component},
+  // {path: 'halaman2/:idnote', component: Halaman2Component}
+  {path: 'halaman2', component: Halaman2Component}
 ]
 
 @NgModule({

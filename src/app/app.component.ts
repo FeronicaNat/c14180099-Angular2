@@ -28,7 +28,7 @@ export class AppComponent  {
   }
 
   DETAIL(){
-    // this.router.navigate(["/halaman2"]);
+    this.router.navigate(["/halaman2"]);
 
   }
 
