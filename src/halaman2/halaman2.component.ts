@@ -8,14 +8,16 @@ import { GlobalvarService } from '../globalvar.service';
   styleUrls: ['./halaman2.component.css']
 })
 export class Halaman2Component implements OnInit {
-  listnotes;
+  shownotes: Array<{judul:string,isi:string,tanggal:Date}> = [];
 
   constructor(
     private router:Router, public globalvar:GlobalvarService,private route:ActivatedRoute){
-      this.globalvar.getnotes();
+      // this.globalvar.getnotes();
     }
 
   ngOnInit() {
+    this.shownotes = this.globalvar.getnotes();
+    console.log(this.shownotes.length);
   }
 
 }
