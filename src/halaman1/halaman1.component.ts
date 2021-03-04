@@ -30,6 +30,10 @@ export class Halaman1Component implements OnInit {
     // this.paramjudul=isijudul;
   }
    addnote(){
+     if(this.judulnote==null||this.isinote==null||this.tanggalnote=="null"){
+       alert("Semua data harus diisi")
+     }
+     else{
     //  this.globalvar.setjudul(this.judulnote);
     //  this.judulshow=this.globalvar.getjudul();
     //  this.globalvar.setisi(this.isinote);
@@ -42,9 +46,11 @@ export class Halaman1Component implements OnInit {
      
      for (var i = 0; i < this.lennote; i++) {
       console.log(
-        this.listnotes[i]
+        this.listnotes[i],
+        this.listnotes[i].judul
       );
       }
+     }
 
     //  this.router.navigate(["/halaman2"]);
 

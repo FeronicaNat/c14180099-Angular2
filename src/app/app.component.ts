@@ -1,6 +1,6 @@
 import { Component, VERSION } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { GlobalvarService } from '../globalvar.service';
+import { GlobalvarService } from '../globalvar.service';
 
 @Component({
   selector: 'my-app',
@@ -9,8 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AppComponent  {
    constructor(
-    private router:Router, private route:ActivatedRoute){
-      // public globalvar:GlobalvarService,
+    private router:Router, private route:ActivatedRoute,public globalvar:GlobalvarService){
+      // 
       
       // 
       // this.namaglobal=this.globalvar.getnama();
